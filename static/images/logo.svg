@@ -1,0 +1,5 @@
+<!-- Simple SVG logo placeholder -->
+<svg width="120" height="40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" fill="#13547a" rx="5"/>
+  <text x="60" y="25" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">AckHub</text>
+</svg>

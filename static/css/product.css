@@ -1,0 +1,403 @@
+:root {
+    --bs-primary: #8119AA;
+    --bs-primary-rgb: 129, 25, 170;
+}
+/* Event Page */
+
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #ffffff;  
+    color: #8119AA;
+    border: 2px solid #8119AA;
+    font-weight: bold;
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+/* Increased border radius for cards */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+/* Remove blue outline on button focus/click */
+.btn:focus, .btn:active, .btn:active:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.close{
+    font-size: 40px;
+}
+
+/* Our expertise Page */
+
+
+.expertise-card {
+    border-radius: 20px;
+    box-shadow: 0 0 20px #74747454;
+    overflow: hidden;
+    background: white;
+    margin-bottom: 40px;
+}
+.expertise-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.expertise-image-container{
+    padding: 30px;
+}
+.expertise-content {
+    padding: 30px;
+}
+.expertise-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.expertise-desc{
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+.expertise-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.expertise-list li {
+    position: relative;
+    color: #333;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1.5;
+}
+.expertise-list li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+
+/* Our Products Page */
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.product-section {
+    padding-top: 100px;
+}
+
+.flip-card {
+    background: none;
+    width: 100%;
+    max-width: 580px;
+    min-height:370px;
+    height: auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    transition: all 0.4s ease;
+}
+
+.flip-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.flip-card-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient( to bottom, rgba(39, 39, 39, 0.342),rgb(0, 0, 0));
+    color: white;
+    padding: 10px 15px 0px 15px;
+    font-weight: 700;
+    text-align: center;
+    z-index: 3;
+    transition: opacity 0.6s ease;
+}
+
+/* Prevent the title overlay from blocking interactions with content/buttons */
+.flip-card-title-overlay {
+    pointer-events: none;
+}
+
+.flip-card-title-overlay p {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    text-align: center;
+    z-index: 3;
+    transition: opacity 0.6s ease;
+}
+
+
+.flip-card:hover .flip-card-title-overlay {
+    opacity: 0;
+}
+
+.flip-card:hover .flip-card-img {
+    opacity: 0;
+    transform: scale(1.05) translateY(-20px);
+}
+
+.flip-card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    width: 100%;
+    min-height: 370px;
+    background: #fafafa;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    text-align: justify;
+}
+
+.flip-card-content {
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: opacity 1s ease, transform 1s ease, border 0.3s ease 1s;
+}
+
+.flip-card:hover .flip-card-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.flip-card-top {
+    text-align: center;
+    width: 100%;
+}
+
+.flip-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+    margin-bottom: 0.5rem;
+}
+
+.flip-card-desc {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+.flip-card-list ul li {
+    font-size: 0.90rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.flip-card-btn {
+    background: var(--bs-primary);
+    color: #fff;
+    border: 2px solid var(--bs-primary);
+    padding: 0.5rem 2.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.flip-card-btn:hover {
+    background: #fff;
+    color: var(--bs-primary);
+}
+
+@media (max-width: 1200px) {
+    .flip-card-title-overlay p {
+        font-size: 1.3rem !important;
+    }
+    .flip-card {
+        height: 380px;
+    }
+    .flip-card-content {
+        padding: 1.2rem;
+    }
+    
+}
+
+@media (max-width: 991px) {
+    .flip-card {
+        min-height: 340px;
+        width: 80%;
+    }
+    
+    .flip-card-content {
+        padding: 1.2rem;
+        height: 100%;
+    }
+
+    .flip-card-title-overlay p {
+        font-size: 1.3rem !important;
+    }
+    
+    .expertise-card{
+        width: 85%;
+    }
+    .expertise-image{
+        width: 100% !important;
+        height: 370px !important;
+    }   
+    .expertise-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100% !important;
+    }
+    .expertise-content {
+        padding: 0 30px 30px 30px;
+    }
+    
+} 
+
+@media (max-width: 768px) {
+    .flip-card {
+        min-height: 400px;
+    }
+    
+    .flip-card-content {
+        padding: 1rem;
+    }
+    
+    .flip-card-title {
+        font-size: 1.2rem;
+    }
+
+    .flip-card-title-overlay p {
+        font-size: 1.2rem !important;
+    }
+    
+    .flip-card-desc {
+        font-size: 0.95rem;
+    }
+
+    .flip-card-img{
+        object-fit: fill;
+    }
+
+    .expertise-card{
+        width: 100% !important;
+    }
+    .expertise-image{
+        width: 100% !important;
+        height: 200px !important;
+    }   
+} 
+
+
+
+@media (max-width: 500px) {
+    .flip-card {
+        height: 400px;
+    }
+    
+    .flip-card-content {
+        padding: 0.8rem;
+    }
+
+    .flip-card-title {
+        font-size: 1.1rem;
+    }
+
+    .flip-card-img{
+        object-fit: fill;
+    }
+
+    .flip-card-title-overlay p {
+        font-size: 1.1rem !important;
+    }
+
+    .flip-card-desc {
+        font-size: 0.9rem;
+    }
+    
+    .flip-card-btn {
+        padding: 0.4rem 2rem;
+        font-size: 0.9rem;
+    }
+    
+}
+
+@media (max-width: 450px) {
+    .flip-card {
+        width: 100%;
+        min-height: 400px;
+    }
+    .flip-card-img{
+        object-fit: fill;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .flip-card {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .flip-card-content {
+        padding: 0.6rem;
+    }
+    .flip-card-title {
+        font-size: 1rem;
+    }
+
+    .flip-card-title-overlay p {
+        font-size: 1rem !important;
+    }
+
+    .flip-card-desc {
+        font-size: 0.85rem;
+    }
+    .flip-card-btn {    
+        padding: 0.3rem 1.5rem;
+        font-size: 0.8rem;
+    }
+    
+
+}
