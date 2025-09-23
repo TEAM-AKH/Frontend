@@ -14,7 +14,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif ;
     background-color: var(--bg-color);
     color: white;
     height: 100vh;
@@ -23,7 +23,9 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bolder;
 }
+
 .background-img {
     position: absolute;
     top: 0;
@@ -37,16 +39,16 @@ body, html {
 .logo-container {
     position: relative;
     z-index: 2;
-    width: 700px; /* Adjust size as needed */
-    height: 700px;
+    width: 600px; /* Adjust size as needed */
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .logo-image {
-    width: 500px;
-    height: 500px; 
+    width: 450px;
+    height: 450px; 
     max-width: 1600px;
     animation: fadeInLogo 2s ease-in-out;
 }
@@ -67,11 +69,12 @@ body, html {
 .card {
     position: absolute;
     z-index: 10;
-    background-color: rgba(12, 138, 35, 0.85);
-    backdrop-filter: blur(5px);
+  background: linear-gradient(135deg, #7c1fc8 0%, #b121eb 100%);
+  backdrop-filter: blur(5px);
     color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 25px;
+    margin-right: 30px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     font-size: 1em; 
@@ -81,12 +84,31 @@ body, html {
     width: 370px; /* Added fixed width */
     visibility: visible;
     margin-left: 10px;
+    margin-top: 25px;
+}
+.icon {
+      display: block; /* Changed from none to block to make it visible */
+      width: z0px; /* Adjust size as needed */
+      height: 30px; /* Adjust size as needed */
+      /* Add any other styling for your icon here, e.g., background-image for an SVG or font-awesome classes */
+      /* Example if using a background image: */
+      /* background-image: url('path/to/your/icon.svg'); */
+      /* background-size: contain; */
+      /* background-repeat: no-repeat; */
+    }
+button {
+  border: none; /* Removes the border */
+  background: none; /* Removes any background color */
+  color: #ffffff; /* Sets the color to match the card's text */
+  /* Adjust size as needed */
+    
 }
 /* --- Info Cards --- */
 #card {
     top: 20px;
     right: 20px;
-    width: 370px; /* Changed from 250px to 370px */
+    width: 370px; 
+    /* Changed from 250px to 370px */
 }
 #card.hidden {
     opacity: 0;
@@ -97,15 +119,25 @@ body, html {
     font-size: 0.9em;
     line-height: 1.6;
 }
+body.outer-landing-page {
+  position: relative; /* To establish a positioning context for the absolutely positioned child */
+}
+
+div#card {
+  position: absolute; /* Position the card relative to its nearest positioned ancestor (the body) */
+  top: 0; /* Align the top edge of the card with the top edge of the body */
+  right: 0; /* Align the right edge of the card with the right edge of the body */
+}
+
 #hover-text-container {
     position: absolute;
     top: 60px; /* Position it above the center */
     left: 50%;
     transform: translateX(-50%);
     z-index: 15;
-    color: rgb(85, 6, 102);
-    border: 2px solid rgb(81, 7, 98);
-    font-size:20px;
+    color: rgb(119, 10, 143);
+    border: 2px solid rgb(135, 8, 163);
+    font-size:15px;
     padding: 10px 10px;
     border-radius: 8px;
     opacity: 0; /* Hidden by default */
@@ -115,20 +147,29 @@ body, html {
 #bottom-container {
     position: absolute;
     z-index: 15;
-    bottom: 40px; /* Updated value */
+    bottom: 38px; /* Updated value */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: #ccc;
+  
 }
 #bottom-container h3 {
-    font-size: 3em;
-    margin: 0;
-    color:rgb(111, 11, 133);
+    font-size: 2.5em;
+    margin: 0 auto; /* centers automatically */
+    color: rgb(111, 11, 133);
     font-weight: 600;
+    font-family: bold;
+    text-align: center; /* centers the text */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    animation: fadeInLogo 2s ease-out;
+    transition: text-shadow 0.2s ease;
+}
+#bottom-container h3:hover {
+    cursor: pointer;
+   text-shadow: 0 0 20px rgba(99, 9, 119, 0.7);
 }
 /* --- Keyframe Animations --- */
 @keyframes rotate {
@@ -140,19 +181,33 @@ body, html {
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
 }
-    </style>
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
 </head>
 <body class="outer-landing-page">
-    <img src="../static/images/landing-bg.png" alt="Background" class="background-img">
-        <div id="card" class="card">
-        <ul>
-            <li>Our logo is your guide.</li>
-            <li>Hover over any circle to explore our offerings.</li>
-            <li>Click on a circle to be instantly taken to its dedicated service page.</li>
-        </ul>
+    <img src="landing-bg.png" alt="Background" class="background-img">
+  <div id="topRightContainer" style="position: absolute; top: 20px; right: 20px; z-index: 30;">
+    <div id="infoIcon" class="info-icon" style="cursor: pointer; display: block;">
+  <img id="logoIcon" class="icon" src="../../static/images/info.png" alt="Info Icon" style="width: 45px; height: 45px;">
     </div>
-        <div class="logo-color d-flex align-items-center justify-content-center logo-container">
-            <div id="hover-text-container"></div>
+    <div id="card" class="card ai-style-change-1 hidden" style="margin: 0;">
+      <ul>
+        <li>Our logo is your guide.</li>
+        <li>Hover over any circle to explore our offerings.</li>
+        <li>Click on a circle to be instantly taken to its dedicated service page.</li>
+      </ul>
+      <button id="closeCardButton" style="position: absolute; top: 10px; right: 10px; z-index: 10;">X</button>
+    </div>
+  </div>
+  <div class="logo-color d-flex align-items-center justify-content-center logo-container">
+    <div id="hover-text-container"></div>
             <center>
                 <svg class="logo-image" width="auto" height="auto" viewBox="0 0 333 334" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M94.3466 268.163L77.7737 290.974C80.0386 293.381 80.3481 297.132 78.3342 299.904C76.0559 303.039 71.6669 303.735 68.5311 301.456C65.3953 299.178 64.7002 294.789 66.9785 291.653C68.9924 288.881 72.6556 288.017 75.6445 289.427L92.2174 266.616L94.3466 268.163ZM75.3225 292.298C73.3628 290.874 70.6199 291.309 69.1961 293.268C67.7722 295.228 68.2067 297.971 70.1664 299.395C72.1261 300.819 74.869 300.384 76.2928 298.425C77.7167 296.465 77.2822 293.722 75.3225 292.298Z" fill="url(#paint0_linear_1967_3130)"></path>
@@ -342,9 +397,9 @@ body, html {
 </div>
 </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const serviceData = {
-                'service-circle-11': { title: 'Home', url: '/home.html' },
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceData = {
+         'service-circle-11': { title: 'Home', url: '/home.html' },
                 'service-circle-22': { title: 'SAP Consulting', url: '/sap.html' },
                 'service-circle-33': { title: 'Cloud Expertise', url: '/cloud.html' },
                 'service-circle-44': { title: 'Custom SAP solutions', url: '/customsap.html' },
@@ -354,45 +409,61 @@ body, html {
                 'service-circle-88': { title: 'Mobile Application', url: '/mobile.html' },
                 'service-circle-99': { title: 'Full-Stack Development', url: '/fullstack.html' },
                 'center-hand-circle': { title: 'About Us', url: '/about.html' },
-                  'outer-circle-11': { title: 'Ongoing Support', url: '/ongoing.html' },
-            };
+                'outer-circle-11': { title: 'Ongoing Support', url: '/ongoing.html' },
+    };
 
-            const infoCard = document.getElementById('card');
-            const hoverTextContainer = document.getElementById('hover-text-container');
-            const interactiveElements = document.querySelectorAll('.service-circle, .center-hand, #outer-circle-11');
+    const infoCard = document.getElementById('card');
+    const hoverTextContainer = document.getElementById('hover-text-container');
+    const interactiveElements = document.querySelectorAll('.service-circle, .center-hand, #outer-circle-11');
+    const logoIcon = document.querySelector('.icon'); // Get the icon element
 
-            interactiveElements.forEach(element => {
-                element.addEventListener('click', () => {
-                    const id = element.id;
-                    if (serviceData[id] && serviceData[id].url) {
-                        window.location.href = serviceData[id].url;
-                    }
-                });
-                element.addEventListener('mouseover', function() {
-                    const data = serviceData[this.id];
-                    if (data) {
-                        hoverTextContainer.textContent = data.title;
-                        hoverTextContainer.style.opacity = '1';
-                    }
-                });
-
-                element.addEventListener('mouseout', function() {
-                    hoverTextContainer.style.opacity = '0';
-                });
-
-                element.addEventListener('click', function() {
-                    const data = serviceData[this.id];
-        
-                });
-            });
-
-            // Make instruction card disappear after 5 seconds
-            setTimeout(() => {
-                infoCard.classList.add('hidden');
-                infoCard.style.visibility = 'hidden';
-            }, 5000);
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseover', function() {
+            const data = serviceData[this.id];
+            if (data) {
+                hoverTextContainer.textContent = data.title;
+                hoverTextContainer.style.opacity = '1';
+            }
         });
 
+        element.addEventListener('mouseout', function() {
+            hoverTextContainer.style.opacity = '0';
+        });
+
+        element.addEventListener('click', function() {
+            const data = serviceData[this.id];
+            window.location.href = data.url;
+        });
+    });
+
+  // ...existing code...
+});
     </script>
 </body>
+<script>
+  // Show card when info icon is clicked, hide icon
+  const infoIcon = document.getElementById('infoIcon');
+  const card = document.getElementById('card');
+  const closeCardButton = document.getElementById('closeCardButton');
+
+  // Show card for 5 seconds on page load, then hide and show icon
+  window.addEventListener('DOMContentLoaded', function() {
+    card.classList.remove('hidden');
+    infoIcon.style.display = 'none';
+    setTimeout(function() {
+      card.classList.add('hidden');
+      infoIcon.style.display = 'block';
+    }, 5000);
+  });
+
+  infoIcon.addEventListener('click', function() {
+    card.classList.remove('hidden');
+    infoIcon.style.display = 'none';
+  });
+
+  closeCardButton.addEventListener('click', function() {
+    card.classList.add('hidden');
+    infoIcon.style.display = 'block';
+  });
+</script>
 </html>
