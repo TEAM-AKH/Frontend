@@ -28,7 +28,7 @@ from flask_admin.form.upload import FileUploadField
 from werkzeug.datastructures import FileStorage
 from flask_login import current_user
 
-app = Flask(__name__, static_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'static'))
+app = Flask(__name__, static_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'static'), template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 CORS(app) # Enable CORS for all routes
 
 # Flask-Mail configuration
@@ -272,6 +272,10 @@ def ongoing():
 def optimization():
     return send_from_directory(os.path.abspath(os.path.join(app.root_path, os.pardir)), 'optimization.html')
 
+@app.route('/')
+def index():
+    return send_from_directory(os.path.abspath(os.path.join(app.root_path, os.pardir)), 'index.html')
+
 @app.route('/products.html')
 def products():
     return send_from_directory(os.path.abspath(os.path.join(app.root_path, os.pardir)), 'products.html')
@@ -288,9 +292,14 @@ def services():
 def training():
     return send_from_directory(os.path.abspath(os.path.join(app.root_path, os.pardir)), 'training.html')
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/cyberproducts.html')
+def cyberproducts():
+    return send_from_directory(os.path.abspath(os.path.join(app.root_path, os.pardir)), 'cyberproducts.html')
+
+@app.route('/aimlproducts.html')
+def aimlproducts():
+    return send_from_directory(os.path.abspath(os.path.join(app.root_path, os.pardir)), 'aimlproducts.html')
+
 
 if __name__ == '__main__':
     with app.app_context():
