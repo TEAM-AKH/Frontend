@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +10,14 @@
     <meta name="description" content="Build robust web applications with Acknowledgement Hub's full-stack expertise. We deliver end-to-end front-end and back-end development for scalable solutions.">
     <meta name="author" content="Team Loop (Part of AcknowledgementHub IT wing)">
     <title>Acknowledgement Hub</title>
-    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/bootstrap-icons.css" rel="stylesheet">
-    <link href="/static/css/templatemo-first-portfolio-style.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/templatemo-first-portfolio-style.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&icon" rel="stylesheet" />
     
@@ -37,7 +39,7 @@
 
 
                 <div class="nav-img d-flex align-items-center">
-                    <img src="/static/images/logo.png" alt="">
+                    <img src="{% static 'images/logo.png' %}" alt="">
                 </div>
 
                 <div class="nav-bar-position collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -75,32 +77,34 @@
     <main>
         
         
-<link href="/static/css/product.css" rel="stylesheet">
+<link href="{% static 'css/product.css' %}" rel="stylesheet">
         <main>
             <section class="about product-section " id="section_2">
                 <div class="text-center mb-5">
                     <h1 class="text-primary pb-3">Cyber Products</h1>
                 </div>
-                <div class="col-12 col-lg-6 mb-4 d-flex justify-content-center">
+                <div class="container px-4 mb-4">
+                    <div class="row g-4">
+                        {% for product in cyber_products %}
+                        <div class="col-12 col-lg-6 mb-4 d-flex justify-content-center">
                             <div class="flip-card">
-                                <img src="/static/images/Wolfronix.jpg" class="flip-card-img" alt="Workshop Poster">
+                                <img src="{{ product.image.url }}" class="flip-card-img" alt="{{ product.product_title }}">
                                 <div class="flip-card-title-overlay"> 
-                                    <p></p>
+                                    <p>{{ product.product_title }}</p>
                                 </div>
                 
                                 <div class="flip-card-content">
                                     <div class="flip-card-top">
-                                        <div class="flip-card-title">WOLFRONIX</div>
-                                        <div class="flip-card-desc">The World’s toughest Cybersecurity Product – Launching Soon.
-                                            Built with next-gen encryption, AI defense, and zero-trust architecture, it’s designed to stop threats before they start.
-                                            Unbreakable. Scalable. Future-ready.
-                                            Stay protected. Stay ahead.
-                                        </div>
+                                        <div class="flip-card-title">{{ product.product_title }}</div>
+                                        <div class="flip-card-desc">{{ product.product_description }}</div>
                                     </div>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7361421964869009408" target="_blank" class="flip-card-btn">Learn More</a>
+                                    <a href="{{ product.social_media }}" target="_blank" class="flip-card-btn">Learn More</a>
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
+                        
+                    </div>
                 </div>
             </section>
         </main>
@@ -147,7 +151,7 @@
                                     <a href="/products.html" class="footer-text">Products</a>
                                     <a href="/expertise.html" class="footer-text">Expertise</a>
                                     <a href="/about.html" class="footer-text">About </a>
-                                    <a href="http://127.0.0.1:5000/admin/" class="footer-text"> Admin </a>
+                                    <a href="http://127.0.0.1:8000/admin/" class="footer-text"> Admin </a>
                                     
 
                                 </div>
@@ -193,7 +197,7 @@
         
                             <div class="d-flex box align-items-center justify-content-center footer-item-height footer-icon-center">
                                     <div class="logo-profile d-flex justify-content-center align-items-center">
-                                        <img src="/static/images/logo.png" alt=""> 
+                                        <img src="{% static 'images/logo.png' %}" alt=""> 
                                         
                                     </div>    
                             </div>  
@@ -205,16 +209,16 @@
 
     
     
-        <script src="/static/js/fade-effect.js"></script>
-        <script src="/static/js/image-slider.js"></script>
-        <script src="/static/js/jquery.min.js"></script>
-        <script src="/static/js/bootstrap.min.js"></script>
-        <script src="/static/js/jquery.sticky.js"></script>
-        <script src="/static/js/click-scroll.js"></script>
-        <script src="/static/js/jquery.magnific-popup.min.js"></script>
-        <script src="/static/js/magnific-popup-options.js"></script>
-        <script src="/static/js/custom.js"></script>
-        <script src="/static/js/mail.js"></script>
+        <script src="{% static 'js/fade-effect.js' %}"></script>
+        <script src="{% static 'js/image-slider.js' %}"></script>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/click-scroll.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/mail.js' %}"></script>
     
 
 </body>
