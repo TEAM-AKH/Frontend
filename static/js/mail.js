@@ -1,48 +1,31 @@
-function submitForm(event) {
-    event.preventDefault(); // Prevent default form submission
+const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            formStatus.textContent = 'Transmitting...';
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch('https://formspree.io/f/mzzjrako', { // <-- REPLACE THIS
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-    const form = event.target;
-    const submitButton = form.querySelector('button[type="submit"]');
-    
-    submitButton.innerHTML = 'Submitting...';
-    submitButton.disabled = true;
-
-    const formData = new FormData(form);
-    const data = {};
-    for (let [key, value] of formData.entries()) {
-        data[key] = value;
-    }
-
-    fetch('http://localhost:5000/submit_form', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(result => {
-        alert(result.message);
-        if (result.message === 'Form submitted successfully!') {
-            form.reset(); // Clear the form
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while submitting the form.');
-    })
-    .finally(() => {
-        submitButton.innerHTML = 'Start the Conversation';
-        submitButton.disabled = false;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('mail-form');
-
-    if (form) {
-        form.addEventListener('submit', submitForm);
-    } else {
-        console.error("Form with ID 'mail-form' not found.");
-    }
-});
+                if (response.ok) {
+                    formStatus.textContent = 'Transmission successful. We will contact you shortly.';
+                    formStatus.style.color = '#00ffff';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            } catch (error) {
+                formStatus.textContent = 'An error occurred. Please try again.';
+                formStatus.style.color = '#ff4d4d';
+            } finally {
+                 setTimeout(() => {
+                    formStatus.textContent = '';
+                    formStatus.style.color = '';
+                }, 5000);
+            }
+         });

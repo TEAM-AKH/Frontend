@@ -10,12 +10,46 @@
     border-color: var(--bs-primary);
 }
 
+
 .btn-primary:hover, .btn-primary:focus {
     background-color: #ffffff;  
     color: #8119AA;
     border: 2px solid #8119AA;
     font-weight: bold;
 }
+
+.form-control {
+    background-color: #f0e6f7; /* Light purple background */
+    border: 1px solid #d1b3e0; /* Slightly darker purple border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 12px 15px; /* Padding inside the input */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 1rem; /* Font size */
+    color: #333; /* Text color */
+}
+
+.form-control::placeholder {
+    color: #8119AA; /* Placeholder color */
+}
+
+.btn-primary {
+    background-color: #8119AA; /* Purple background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 12px 30px; /* Padding inside the button */
+    font-size: 1.1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #6a148a; /* Darker purple on hover */
+}
+
 
 .text-primary {
     color: var(--bs-primary) !important;

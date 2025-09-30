@@ -1,6 +1,5 @@
 
 
-{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +11,14 @@
     <meta name="description" content="Build robust web applications with Acknowledgement Hub's full-stack expertise. We deliver end-to-end front-end and back-end development for scalable solutions.">
     <meta name="author" content="Team Loop (Part of AcknowledgementHub IT wing)">
     <title>Acknowledgement Hub</title>
-    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'css/templatemo-first-portfolio-style.css' %}" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/css/templatemo-first-portfolio-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&icon" rel="stylesheet" />
     
@@ -41,7 +40,7 @@
 
 
                 <div class="nav-img d-flex align-items-center">
-                    <img src="{% static 'images/logo.png' %}" alt="">
+                    <img src="/static/images/logo.png" alt="">
                 </div>
 
                 <div class="nav-bar-position collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -79,7 +78,7 @@
     <main>
         
         
-<link href="{% static 'css/product.css' %}" rel="stylesheet">
+<link href="/static/css/product.css" rel="stylesheet">
         <main>
             <section class="about product-section " id="section_2">
                 <div class="text-center mb-5">
@@ -87,24 +86,74 @@
                 </div>
                 <div class="container px-4 mb-4">
                     <div class="row g-4">
-                        {% for product in aiml_products %}
+                        
                         <div class="col-12 col-lg-6 mb-4 d-flex justify-content-center">
                             <div class="flip-card">
-                                <img src="{{ product.image.url }}" class="flip-card-img" alt="{{ product.product_title }}">
+                                <img src="/static/images/sql-1_lmqAZAT.png" class="flip-card-img" alt="Workshop Poster">
                                 <div class="flip-card-title-overlay"> 
-                                    <p>{{ product.product_title }}</p>
+                                    <p>SQL and NoSQL Agents</p>
                                 </div>
                 
                                 <div class="flip-card-content">
                                     <div class="flip-card-top">
-                                        <div class="flip-card-title">{{ product.product_title }}</div>
-                                        <div class="flip-card-desc">{{ product.product_description }}</div>
+                                        <div class="flip-card-title">SQL and NoSQL Agents</div>
+                                        <div class="flip-card-desc">SQL and NoSQL agents enable natural language interaction with relational and non-relational databases, allowing users to retrieve, update, or insert data without coding. They democratize data access for non-technical staff, automate routine database tasks, and reduce errors. By speeding analytics, enhancing operational efficiency, and supporting agile iterations, they help teams innovate faster and work more effectively.</div>
                                     </div>
-                                    <a href="{{ product.social_media }}" target="_blank" class="flip-card-btn">Learn More</a>
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7361422862768816131" target="_blank" class="flip-card-btn">Learn More</a>
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
+                        
+                        <div class="col-12 col-lg-6 mb-4 d-flex justify-content-center">
+                            <div class="flip-card">
+                                <img src="/static/images/Smart_Document_Search.png" class="flip-card-img" alt="Workshop Poster">
+                                <div class="flip-card-title-overlay"> 
+                                    <p>Smart Document Search</p>
+                                </div>
+                
+                                <div class="flip-card-content">
+                                    <div class="flip-card-top">
+                                        <div class="flip-card-title">Smart Document Search</div>
+                                        <div class="flip-card-desc">Smart Document Search is an AI-powered assistant for instantly locating precise answers in business documents like contracts, reports, and emails. Users can group files into collections and query them directly. This eliminates time-consuming manual searches, ensures accurate and relevant results, keeps sensitive data private via local processing, and learns from feedback to improve accuracy over time.</div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/posts/acknowledgement-hub-information-technology-services-518879358_our-team-management-system-tms-empowers-activity-7366160729730711552-CigR?utm_source=share&amp;utm_medium=membe" target="_blank" class="flip-card-btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6 mb-4 d-flex justify-content-center">
+                            <div class="flip-card">
+                                <img src="/static/images/contract_analyser.png" class="flip-card-img" alt="Workshop Poster">
+                                <div class="flip-card-title-overlay"> 
+                                    <p>Contract Analysis</p>
+                                </div>
+                
+                                <div class="flip-card-content">
+                                    <div class="flip-card-top">
+                                        <div class="flip-card-title">Contract Analysis</div>
+                                        <div class="flip-card-desc">Contract analysis uses AI to read and summarize legal contracts, highlighting key clauses, obligations, terms, and risks. It flags problematic or non-compliant clauses early, ensuring policy and regulatory compliance. By delivering fast, clear insights, it accelerates negotiations, empowers better decision-making, and frees legal teams from manual review, allowing focus on higher-value strategic work.</div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/posts/acknowledgement-hub-information-technology-services-518879358_we-are-coming-shortly-activity-7366164138445737987-yUna/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACo" target="_blank" class="flip-card-btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6 mb-4 d-flex justify-content-center">
+                            <div class="flip-card">
+                                <img src="/static/images/INVOICE.jpg" class="flip-card-img" alt="Workshop Poster">
+                                <div class="flip-card-title-overlay"> 
+                                    <p>Invoice Extraction</p>
+                                </div>
+                
+                                <div class="flip-card-content">
+                                    <div class="flip-card-top">
+                                        <div class="flip-card-title">Invoice Extraction</div>
+                                        <div class="flip-card-desc">Invoice extraction automates the capture of key details from invoices in any format, including scanned PDFs, images, and digital files. It pulls vendor names, invoice numbers, dates, amounts, and terms without manual input. This boosts efficiency in accounts payable, reduces costly human errors, speeds processing for better cash flow, cuts operational costs, and ensures accurate, compliant records for audits and regulations.</div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7361421964869009408" target="_blank" class="flip-card-btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>
@@ -126,14 +175,27 @@
                     </div>
         
                     <div class="input-box-container d-flex justify-content-center align-items-center" id="contact-us">
-                        <form class="d-flex row input-box justify-content-center" id="mail-form">
-                            <input type="hidden" name="csrfmiddlewaretoken" value="Ob5583lhPhUNIdcLLX4Dg0Ul7mxKTtKgDr26V31T6u12F1z8EpNTNCQhdY0vyLZ8">
-                            <h4 class="mt-4 d-flex justify-content-center text-center">Schedule a Free <br> Consultation</h4>
-                            <input type="text" name="name" placeholder="Enter your Name">
-                            <input type="text" name="number" maxlength="10" inputmode="numeric" placeholder="Enter your Contact number">
-                            <input type="email" name="email"  placeholder="Enter your Email Address">
-                            <button type="submit"  class="schedule-btn d-flex justify-content-center align-items-center mb-4">Start the Conversation</button>
-                        </form>
+                        <div id="contact-form-container">
+                            <form class="d-flex row input-box justify-content-center" id="contact-form" action="" method="POST">
+                                <h4 class="mt-4 d-flex justify-content-center text-center">Schedule a Free <br> Consultation</h4>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" aria-label="Your Name" name="name" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" name="email" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <textarea class="form-control" placeholder="Your Message" aria-label="Your Message" name="message" rows="4" required></textarea>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="thank-you-message" style="display:none;">
+                            <h4>Thank you for your message! We will get back to you shortly.</h4>
+                        </div>
+                        <div id="form-status" style="text-align: center; margin-top: 10px;"></div>
                     </div>
                 </div>
             </section>
@@ -153,7 +215,7 @@
                                     <a href="/products.html" class="footer-text">Products</a>
                                     <a href="/expertise.html" class="footer-text">Expertise</a>
                                     <a href="/about.html" class="footer-text">About </a>
-                                    <a href="http://127.0.0.1:8000/admin/" class="footer-text"> Admin </a>
+                                    <a href="http://127.0.0.1:5000/admin/" class="footer-text"> Admin </a>
                                     
 
                                 </div>
@@ -199,7 +261,7 @@
         
                             <div class="d-flex box align-items-center justify-content-center footer-item-height footer-icon-center">
                                     <div class="logo-profile d-flex justify-content-center align-items-center">
-                                        <img src="{% static 'images/logo.png' %}" alt=""> 
+                                        <img src="/static/images/logo.png" alt=""> 
                                         
                                     </div>    
                             </div>  
@@ -211,16 +273,16 @@
 
     
     
-        <script src="{% static 'js/fade-effect.js' %}"></script>
-        <script src="{% static 'js/image-slider.js' %}"></script>
-        <script src="{% static 'js/jquery.min.js' %}"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'js/jquery.sticky.js' %}"></script>
-        <script src="{% static 'js/click-scroll.js' %}"></script>
-        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-        <script src="{% static 'js/magnific-popup-options.js' %}"></script>
-        <script src="{% static 'js/custom.js' %}"></script>
-        <script src="{% static 'js/mail.js' %}"></script>
+        <script src="/static/js/fade-effect.js"></script>
+        <script src="/static/js/image-slider.js"></script>
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/jquery.sticky.js"></script>
+        <script src="/static/js/click-scroll.js"></script>
+        <script src="/static/js/jquery.magnific-popup.min.js"></script>
+        <script src="/static/js/magnific-popup-options.js"></script>
+        <script src="/static/js/custom.js"></script>
+        <script src="/static/js/mail.js"></script>
     
 
 </body>
