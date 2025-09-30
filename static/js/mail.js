@@ -2,7 +2,7 @@ const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            formStatus.textContent = 'Transmitting...';
+            formStatus.textContent = 'Submiting...';
             const formData = new FormData(contactForm);
             
             try {
@@ -13,8 +13,8 @@ const contactForm = document.getElementById('contact-form');
                 });
 
                 if (response.ok) {
-                    formStatus.textContent = 'Transmission successful. We will contact you shortly.';
-                    formStatus.style.color = '#00ffff';
+                    formStatus.textContent = 'Thank you for contacting. We will contact you shortly.';
+                    formStatus.style.color = '#8119AA';
                     contactForm.reset();
                 } else {
                     throw new Error('Network response was not ok.');

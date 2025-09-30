@@ -307,27 +307,15 @@
                     </div>
         
                     <div class="input-box-container d-flex justify-content-center align-items-center" id="contact-us">
-                        <div id="contact-form-container">
-                            <form class="d-flex row input-box justify-content-center" id="contact-form" action="" method="POST">
-                                <h4 class="mt-4 d-flex justify-content-center text-center">Schedule a Free <br> Consultation</h4>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Your Name" aria-label="Your Name" name="name" required>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" name="email" required>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <textarea class="form-control" placeholder="Your Message" aria-label="Your Message" name="message" rows="4" required></textarea>
-                                </div>
-                                <div class="col-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary">Send Message</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div id="thank-you-message" style="display:none;">
-                            <h4>Thank you for your message! We will get back to you shortly.</h4>
-                        </div>
-                        <div id="form-status" style="text-align: center; margin-top: 10px;"></div>
+                        <form class="d-flex row input-box justify-content-center" id="contact-form">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="7ZQpULZV29yNt0UnXXXNHXvrzcqL2BL7CvKJxaNOgGh6b29lLsBc0iv3sFjsiS2b">
+                            <h4 class="mt-4 d-flex justify-content-center text-center">Schedule a Free <br> Consultation</h4>
+                            <div id="form-status"></div>
+                            <input type="text" name="name" maxlength="20" inputmode="text" placeholder="Enter your Name">
+                            <input type="text" name="number" maxlength="10" inputmode="numeric" placeholder="Enter your Contact number">
+                            <input type="email" name="mail"  placeholder="Enter your Email Address">
+                            <button type="submit"  class="schedule-btn d-flex justify-content-center align-items-center mb-4">Start the Conversation</button>
+                        </form>
                     </div>
                 </div>
             </section>
